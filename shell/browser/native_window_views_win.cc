@@ -439,6 +439,13 @@ void NativeWindowViews::HandleSizeEvent(WPARAM w_param, LPARAM l_param) {
         default:
           break;
       }
+      // If a given window was minimized/maximized and has since been
+      // restored, ensure the WCO buttons are set to normal state.
+      auto* ncv = widget()->non_client_view();
+      if (titlebar_overlay_enabled() && ncv) {
+        auto* frame_view = static_cast<WinFrameView*>(ncv->frame_view());
+        frame_view->caption_button_container()->ResetWindowControls();
+      }
       break;
   }
 }
