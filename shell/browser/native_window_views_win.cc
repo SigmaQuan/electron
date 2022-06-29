@@ -11,6 +11,7 @@
 #include "shell/browser/browser.h"
 #include "shell/browser/native_window_views.h"
 #include "shell/browser/ui/views/root_view.h"
+#include "shell/browser/ui/views/win_frame_view.h"
 #include "shell/common/electron_constants.h"
 #include "ui/display/display.h"
 #include "ui/display/win/screen_win.h"
